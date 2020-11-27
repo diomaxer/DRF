@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class Car(models.Model):
-    vin = models.CharField(verbose_name="Vin", max_length=50, db_index=True)
+    vin = models.CharField(verbose_name="Vin", max_length=50, unique=True, db_index=True)
     colour = models.CharField(verbose_name="Colour", max_length=50)
     brand = models.CharField(verbose_name="Brand", max_length=50)
     CAR_TYPES = (
